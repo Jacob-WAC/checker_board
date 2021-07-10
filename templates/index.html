@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+
+  </head>
+  <body>
+
+    
+
+
+    {% for x in range(0,xtimes): %}
+    <div class="container">
+      {% for i in range(0,ytimes): %}
+        {% if x % 2 == 0 %}
+          {% if i % 2 == 0 %}
+              <div style="background-color: {{color1}};" class="innerclassname"></div>
+          {% elif i % 2 != 0 %}
+              <div style="background-color: {{color2}};" class="otherclassname" ></div>
+          {% endif %}
+
+        {% elif x % 2 != 0 %}
+          {% if i % 2 == 0 %}
+            <div style="background-color: {{color2}};" class="innerclassname"></div>
+          {% elif i % 2 != 0 %}
+            <div style="background-color: {{color1}};" class="otherclassname" ></div>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% endfor %}
+
+  </body>
+</html>
